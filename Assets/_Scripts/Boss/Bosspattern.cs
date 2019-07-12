@@ -21,22 +21,24 @@ public class Bosspattern : MonoBehaviour
                 Rigidbody2D temp;
                 float digree;
 
-                obj = (GameObject)Instantiate(bullet,t.position,Quaternion.identity);
-                temp = obj.GetComponent<Rigidbody2D>();
-                #region LookAt2D
-                Vector2 ToPlayerDir;
+                Vector3 playerPosition;
                 try{
-                    ToPlayerDir = SceneManager.Instance.player.transform.position - obj.transform.position;
-                }catch(MissingReferenceException e1){ //씬 내 플레이어를 못찾는다면
+                    playerPosition = SceneManager.Instance.player.transform.position;
+                }catch(MissingReferenceException e1){ //만약 플레이어를 못 찾는다면
                     Debug.Log("Player is not found");
                     break;
                 }
+
+                obj = (GameObject)Instantiate(bullet,t.position,Quaternion.identity);
+                temp = obj.GetComponent<Rigidbody2D>();
+                #region LookAt2D
+                Vector2 ToPlayerDir = playerPosition - obj.transform.position;
                 temp.AddForce(ToPlayerDir.normalized*bulletSpeed);
                 #endregion
 
 
-                digree = Mathf.Atan2(obj.transform.position.x - SceneManager.Instance.player.transform.position.x,
-                                    obj.transform.position.y - SceneManager.Instance.player.transform.position.y)*180f/Mathf.PI;
+                digree = Mathf.Atan2(obj.transform.position.x - playerPosition.x,
+                                    obj.transform.position.y - playerPosition.y)*180f/Mathf.PI;
                 obj.transform.Rotate(0,0,-digree);
             }
             yield return new WaitForSeconds(delay);
