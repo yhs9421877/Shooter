@@ -11,6 +11,7 @@ public class SceneManager : MonoBehaviour
     private int score = 0;
     public GameObject mob_1;
     public GameObject mob_2;
+    public GameObject mob_3;
     public GameObject boss;
     void Awake(){
         if(Instance==null) {Instance=this;}
@@ -18,12 +19,18 @@ public class SceneManager : MonoBehaviour
     }
 
     void Start(){
-        Invoke("SummonMob_1",1f);
-        Invoke("SummonMob_2",4f);
-        Invoke("SummonMob_2",4.5f);
-        Invoke("SummonMob_2",5f);
-        Invoke("SummonMob_3",7f);
-        Invoke("SummonBoss",15.0f);
+        // Invoke("SummonMob_1",1f);
+        // Invoke("SummonMob_2",4f);
+        // Invoke("SummonMob_2",4.5f);
+        // Invoke("SummonMob_2",5f);
+        // Invoke("SummonMob_3",7f);
+        // Invoke("SummonMob_4",10f);
+        // Invoke("SummonMob_4",10.5f);
+        // Invoke("SummonMob_4",11f);
+        // Invoke("SummonBoss",18.0f);
+        Invoke("SummonMob_4",0.5f);
+        Invoke("SummonMob_4",1f);
+        Invoke("SummonMob_4",1.5f);
     }
 
     public void addScore(int score)
@@ -48,6 +55,16 @@ public class SceneManager : MonoBehaviour
         Vector2[] pos = new Vector2[3]{new Vector2(-2,5.5f), new Vector2(0,5.5f), new Vector2(2,5.5f)};
         foreach(Vector2 p in pos){
             Instantiate(mob_1,p,Quaternion.identity);
+        }
+    }
+
+    void SummonMob_4(){
+        Vector2[] pos = new Vector2[2]{new Vector2(-4,5.5f), new Vector2(4,5.5f)};
+        for(int i=0; i<2; i++){
+            GameObject obj = (GameObject)Instantiate(mob_3,pos[i],Quaternion.identity);
+            if(i==1){
+                obj.transform.localScale = new Vector3(-1,1,1);
+            }
         }
     }
 
