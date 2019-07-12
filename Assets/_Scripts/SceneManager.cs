@@ -44,4 +44,5 @@ public class SceneManager : MonoBehaviour
     void SummonMob_2(){ Instantiate(mob_2,mob_2.transform.position,Quaternion.identity); }
 
     void SummonBoss(){ Instantiate(boss,boss.transform.position,Quaternion.identity); }
+    //테스트 주석
 }
