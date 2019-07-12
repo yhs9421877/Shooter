@@ -29,7 +29,13 @@ public class MobAI : MonoBehaviour
                 obj.SetActive(true);
                 temp = obj.GetComponent<Rigidbody2D>();
                 #region LookAt2D
-                Vector2 ToPlayerDir = SceneManager.Instance.player.transform.position - obj.transform.position;
+                Vector2 ToPlayerDir;
+                try{
+                    ToPlayerDir = SceneManager.Instance.player.transform.position - obj.transform.position;
+                }catch(MissingReferenceException e1){ //만약 플레이어를 못 찾는다면
+                    Debug.Log("Player is not found");
+                    break;
+                }
                 temp.AddForce(ToPlayerDir.normalized*bulletSpeed);
                 #endregion
 
