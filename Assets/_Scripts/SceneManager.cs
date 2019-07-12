@@ -19,18 +19,15 @@ public class SceneManager : MonoBehaviour
     }
 
     void Start(){
-        // Invoke("SummonMob_1",1f);
-        // Invoke("SummonMob_2",4f);
-        // Invoke("SummonMob_2",4.5f);
-        // Invoke("SummonMob_2",5f);
-        // Invoke("SummonMob_3",7f);
-        // Invoke("SummonMob_4",10f);
-        // Invoke("SummonMob_4",10.5f);
-        // Invoke("SummonMob_4",11f);
-        // Invoke("SummonBoss",18.0f);
-        Invoke("SummonMob_4",0.5f);
-        Invoke("SummonMob_4",1f);
-        Invoke("SummonMob_4",1.5f);
+        Invoke("SummonMob_1",1f);
+        Invoke("SummonMob_2",4f);
+        Invoke("SummonMob_2",4.5f);
+        Invoke("SummonMob_2",5f);
+        Invoke("SummonMob_3",7f);
+        Invoke("SummonMob_4",10f);
+        Invoke("SummonMob_4",10.5f);
+        Invoke("SummonMob_4",11f);
+        Invoke("SummonBoss",18.0f);
     }
 
     public void addScore(int score)
