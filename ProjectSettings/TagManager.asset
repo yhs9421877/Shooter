@@ -48,6 +48,9 @@ TagManager:
   - name: BackGround
     uniqueID: 3712338639
     locked: 0
+  - name: Cloud
+    uniqueID: 2389172111
+    locked: 0
   - name: Player&Boss
     uniqueID: 2101587915
     locked: 0

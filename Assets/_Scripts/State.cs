@@ -21,10 +21,14 @@ public class State : MonoBehaviour
             hp -= 1;
         }
         if(hp<=0){
-            GameObject.FindObjectOfType<SceneManager>().addScore(100);
-            if(other.gameObject.CompareTag("Player")){ //플레이어라면 애니메이션 재생
+            FindObjectOfType<SceneManager>().addScore(100);
+            if(gameObject.CompareTag("Player")){ //플레이어라면 애니메이션 재생
                 anim.SetTrigger("die");
-            }else{
+                Debug.Log("죽은사람 플레이어");
+                FindObjectOfType<SceneManager>().GameEnd();
+                Destroy(this.gameObject, 0.4f);
+            }
+            else{
                 Destroy(this.gameObject);
             }
         }

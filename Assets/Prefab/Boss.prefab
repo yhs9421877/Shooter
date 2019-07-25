@@ -588,7 +588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b9fdecde3ce3b4f845acc7191bd808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 1000
+  MaxHp: 3000
   hp: 600
   EnemyBulletTag: Bullet
 --- !u!95 &6304065654099564560

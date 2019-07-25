@@ -13,6 +13,10 @@ public class SceneManager : MonoBehaviour
     public GameObject mob_2;
     public GameObject mob_3;
     public GameObject boss;
+
+    public Button restartButton;
+    public Button exitButton;
+
     void Awake(){
         if(Instance==null) {Instance=this;}
         else{Destroy(gameObject);}
@@ -28,6 +32,7 @@ public class SceneManager : MonoBehaviour
         Invoke("SummonMob_4",10.5f);
         Invoke("SummonMob_4",11f);
         Invoke("SummonBoss",18.0f);
+
     }
 
     public void addScore(int score)
@@ -66,6 +71,23 @@ public class SceneManager : MonoBehaviour
     }
 
     void SummonBoss(){ Instantiate(boss,boss.transform.position,Quaternion.identity); }
+
+    public void GameEnd()
+    {
+        restartButton.gameObject.SetActive(true);
+        exitButton.gameObject.SetActive(true);
+
+    }
+
+    public void RestartButtonOnClick()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    public void ExitButtonOnClick()
+    {
+        Application.Quit();
+    }
 
     //테스트 주석
 }
