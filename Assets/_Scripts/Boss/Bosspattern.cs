@@ -57,12 +57,14 @@ public class Bosspattern : MonoBehaviour
             foreach(Transform tr in t){
                 for(int i=0; i<count; i++){
                     GameObject obj = (GameObject)Instantiate(bullet,tr.position,Quaternion.identity);
-                    obj.GetComponent<Rigidbody2D>().AddForce(
-                    new Vector2(speed*Mathf.Cos(Mathf.PI*2*i/count),speed*Mathf.Sin(Mathf.PI*2*i/count)));
+                    Rigidbody2D rb2d = obj.GetComponent<Rigidbody2D>();
+                    rb2d.AddForce(
+                    new Vector2(speed * Mathf.Cos(Mathf.PI * 2 * i / count), speed * Mathf.Sin(Mathf.PI * 2 * i / count)));
                     
                     obj.transform.Rotate(new Vector3(0f,0f,360*i/count-90));
                 }
             }
+            Spell_1(new Transform[1] { transform }, 1, 130f, 0.3f, 0.05f);
             yield return new WaitForSeconds(0.5f);
             shoot++;
         }while(shoot<10);
@@ -73,12 +75,7 @@ public class Bosspattern : MonoBehaviour
         StartCoroutine(_Spell_1(cannons, 10,130f,0f,0.3f));
         StartCoroutine(_Spell_1(subCannons, 11,130f,0.3f,0.3f));
     }
-
-    IEnumerator _Phase_2_Spell_1(){
-        StartCoroutine(_Spell_1(cannons, 10,130f,0f,0.3f));
-        StartCoroutine(_Spell_1(subCannons, 11,130f,0.3f,0.3f));
-        yield return new WaitForSeconds(1f);
-    }
+    
 
     public void Phase_2_Spell_2(){
         Transform[] t = new Transform[5]{this.transform,subCannons[0],subCannons[1],subCannons[2],subCannons[3]};
