@@ -21,7 +21,7 @@ public class SceneManager : MonoBehaviour
 
     public float intervalTime = 3f;
     private float remainTime;
-
+    private bool isRaid = false;
     void Awake(){
         if(Instance==null) {Instance=this;}
         else{Destroy(gameObject);}
@@ -45,6 +45,14 @@ public class SceneManager : MonoBehaviour
     }
 
     void Update()
+    {
+        if (!isRaid)
+        {
+            SummonMob();
+        }
+    }
+
+    void SummonMob()
     {
         if (remainTime <= 0)
         {
@@ -76,6 +84,12 @@ public class SceneManager : MonoBehaviour
         if (canAddScore)
         {
             StartCoroutine(_addScore(score));
+        }
+        int totalScore = int.Parse(scoreText.text);
+        if (totalScore >= 500 && !isRaid)
+        {
+            isRaid = true;
+            SummonBoss();
         }
     }
 
