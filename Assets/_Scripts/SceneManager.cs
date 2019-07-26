@@ -19,22 +19,56 @@ public class SceneManager : MonoBehaviour
 
     private bool canAddScore = true;
 
+    public float intervalTime = 3f;
+    private float remainTime;
+
     void Awake(){
         if(Instance==null) {Instance=this;}
         else{Destroy(gameObject);}
+        remainTime = 0;
     }
 
     void Start(){
-        //Invoke("SummonMob_1",1f);
-        //Invoke("SummonMob_2",4f);
-        //Invoke("SummonMob_2",4.5f);
-        //Invoke("SummonMob_2",5f);
-        //Invoke("SummonMob_3",7f);
-        //Invoke("SummonMob_4",10f);
-        //Invoke("SummonMob_4",10.5f);
-        //Invoke("SummonMob_4",11f);
-        //Invoke("SummonBoss",18.0f);
-        SummonBoss();
+        //Invoke("SummonMob_1", 1f);
+
+        //Invoke("SummonMob_2", 4f);
+        //Invoke("SummonMob_2", 4.5f);
+        //Invoke("SummonMob_2", 5f);
+
+        //Invoke("SummonMob_3", 7f);
+
+        //Invoke("SummonMob_4", 10f);
+        //Invoke("SummonMob_4", 10.5f);
+        //Invoke("SummonMob_4", 11f);
+
+        //Invoke("SummonBoss", 18.0f);
+    }
+
+    void Update()
+    {
+        if (remainTime <= 0)
+        {
+            int rand = UnityEngine.Random.Range(0, 4);
+            if (rand == 0) SummonMob_1();
+            else if (rand == 1)
+            {
+                Invoke("SummonMob_2", 0f);
+                Invoke("SummonMob_2", 0.5f);
+                Invoke("SummonMob_2", 1f);
+            }
+            else if (rand == 2) SummonMob_3();
+            else if (rand == 3)
+            {
+                Invoke("SummonMob_4", 0f);
+                Invoke("SummonMob_4", 0.5f);
+                Invoke("SummonMob_4", 1f);
+            }
+            remainTime = intervalTime;
+        }
+        else
+        {
+            remainTime -= Time.deltaTime;
+        }
     }
 
     public void addScore(int score)

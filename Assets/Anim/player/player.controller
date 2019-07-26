@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba6d34946a2ade438416414aa6635ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateZ: 0
 --- !u!1101 &1101102586657084482
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
