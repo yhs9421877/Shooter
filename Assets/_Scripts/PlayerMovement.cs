@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float bulletSpeed;
     public GameObject bullet;
     public Transform[] cannons;
+    bool inputLeft;
+    bool inputRight;
 
     void Awake(){
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -21,30 +23,47 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        bool inputLeft = false;
-        bool inputRight = false;
-        if(Input.GetKey(KeyCode.LeftArrow)){
+        inputLeft = false;
+        inputRight = false;
+
+        Move();
+
+        animator.SetBool("isLeft",inputLeft);
+        animator.SetBool("isRight",inputRight); 
+    }
+
+    void Move()
+    {
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
             transform.Translate(Vector2.left * speed * Time.deltaTime);
             //spriteRenderer.sprite = leftSprite;
             inputLeft = true;
         }
-        if(Input.GetKey(KeyCode.RightArrow)){
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             //spriteRenderer.sprite = rightSprite;
             inputRight = true;
         }
-        if(Input.GetKey(KeyCode.UpArrow)){
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
             transform.Translate(Vector2.up * speed * Time.deltaTime);
         }
-        if(Input.GetKey(KeyCode.DownArrow)){
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
             transform.Translate(Vector2.down * speed * Time.deltaTime);
         }
-        if(Input.GetKey(KeyCode.Space)){
+        if (Input.GetKey(KeyCode.Space))
+        {
             StartCoroutine("Shooting");
         }
 
-        animator.SetBool("isLeft",inputLeft);
-        animator.SetBool("isRight",inputRight); 
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position); //캐릭터의 월드 좌표를 뷰포트 좌표계로 변환해준다.
+        viewPos.x = Mathf.Clamp01(viewPos.x); //x값을 0이상, 1이하로 제한한다.
+        viewPos.y = Mathf.Clamp01(viewPos.y); //y값을 0이상, 1이하로 제한한다.
+        Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos); //다시 월드 좌표로 변환한다.
+        transform.position = worldPos; //좌표를 적용한다.
     }
 
     IEnumerator Shooting(){
