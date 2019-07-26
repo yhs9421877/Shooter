@@ -17,36 +17,43 @@ public class SceneManager : MonoBehaviour
     public Button restartButton;
     public Button exitButton;
 
+    private bool canAddScore = true;
+
     void Awake(){
         if(Instance==null) {Instance=this;}
         else{Destroy(gameObject);}
     }
 
     void Start(){
-        Invoke("SummonMob_1",1f);
-        Invoke("SummonMob_2",4f);
-        Invoke("SummonMob_2",4.5f);
-        Invoke("SummonMob_2",5f);
-        Invoke("SummonMob_3",7f);
-        Invoke("SummonMob_4",10f);
-        Invoke("SummonMob_4",10.5f);
-        Invoke("SummonMob_4",11f);
-        Invoke("SummonBoss",18.0f);
-
+        //Invoke("SummonMob_1",1f);
+        //Invoke("SummonMob_2",4f);
+        //Invoke("SummonMob_2",4.5f);
+        //Invoke("SummonMob_2",5f);
+        //Invoke("SummonMob_3",7f);
+        //Invoke("SummonMob_4",10f);
+        //Invoke("SummonMob_4",10.5f);
+        //Invoke("SummonMob_4",11f);
+        //Invoke("SummonBoss",18.0f);
+        SummonBoss();
     }
 
     public void addScore(int score)
     {
-        StartCoroutine(_addScore(score));
+        if (canAddScore)
+        {
+            StartCoroutine(_addScore(score));
+        }
     }
 
     IEnumerator _addScore(int score){
         while(score-->0)
         {
+            canAddScore = false;
             this.score += 1;
             scoreText.text = this.score.ToString();
             yield return null;
         }
+        canAddScore = true;
     }
 
     void SummonMob_1(){ Instantiate(mob_1,mob_1.transform.position,Quaternion.identity);  }
