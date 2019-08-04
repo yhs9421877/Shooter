@@ -11,6 +11,7 @@ public class State : MonoBehaviour
     public string EnemyBulletTag;
     private Animator anim;
     private SceneManager sceneManager;
+
     void Awake(){
         Screen.SetResolution(600, 800, false);
 
