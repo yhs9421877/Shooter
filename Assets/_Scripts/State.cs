@@ -33,7 +33,7 @@ public class State : MonoBehaviour
                 sceneManager.addScore(100);
                 if (gameObject.CompareTag("Boss"))
                 {
-                    Debug.Log(UnityEngine.SceneManagement.SceneManager.sceneCount);
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(1);
                 }
             }
 

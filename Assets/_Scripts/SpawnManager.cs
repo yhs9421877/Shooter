@@ -10,7 +10,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject boss;
     public float intervalTime = 3f;
     private float remainTime;
-    private bool isRaid = false;
+    [HideInInspector]public bool isRaid = false;
 
     void Update()
     {
@@ -73,5 +73,5 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    void SummonBoss() { Instantiate(boss, boss.transform.position, Quaternion.identity); }
+    public void SummonBoss() { Instantiate(boss, boss.transform.position, Quaternion.identity); }
 }

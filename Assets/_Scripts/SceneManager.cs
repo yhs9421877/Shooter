@@ -21,11 +21,12 @@ public class SceneManager : MonoBehaviour
 
     private bool canAddScore = true;
 
-    public float intervalTime = 3f;
-    private bool isRaid = false;
+    private SpawnManager spawnManager;
+
     void Awake(){
         if(Instance==null) {Instance=this;}
         else{Destroy(gameObject);}
+        spawnManager = FindObjectOfType<SpawnManager>();
     }
 
     void Start(){
@@ -56,10 +57,10 @@ public class SceneManager : MonoBehaviour
             StartCoroutine(_addScore(score));
         }
         int totalScore = int.Parse(scoreText.text);
-        if (totalScore >= 500 && !isRaid)
+        if (totalScore >= 500 && ! spawnManager.isRaid)
         {
-            isRaid = true;
-            //SummonBoss();
+            spawnManager.isRaid = true;
+            spawnManager.SummonBoss();
         }
     }
 
