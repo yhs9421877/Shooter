@@ -18,7 +18,7 @@ TagManager:
   - 
   - 
   - BackGround
-  - Object
+  - Units
   - BulletLayer
   - 
   - 
@@ -51,7 +51,7 @@ TagManager:
   - name: Cloud
     uniqueID: 2389172111
     locked: 0
-  - name: Player&Boss
+  - name: Units
     uniqueID: 2101587915
     locked: 0
   - name: BulletLayer
