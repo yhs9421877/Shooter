@@ -14,9 +14,11 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.CompareTag(targetTag)){
+        if(other.gameObject.CompareTag(targetTag) || CompareTag("Bullet") && other.gameObject.CompareTag("Boss"))
+        {
+            
             spriteRenderer.sprite = particle;
-            Destroy(this.gameObject);   
+            Destroy(this.gameObject,0.01f);   
         }
     }
 

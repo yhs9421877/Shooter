@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 6715052740607444850}
   m_Layer: 0
   m_Name: mob_1
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 10
   hp: 30
-  EnemyBulletTag: Bullet
+  TargetBulletTag: Bullet
 --- !u!61 &4369099358142137577
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ public class ScrollManager : MonoBehaviour
     void Update()
     {
         RectTransform rt = GetComponent<RectTransform>();
-        Debug.Log(rt.anchoredPosition.y < -(imageCount - 1) * imageHeight);
         if (rt.anchoredPosition.y < -(imageCount - 1) * imageHeight)
         {
             Debug.Log("오리지날포지션");

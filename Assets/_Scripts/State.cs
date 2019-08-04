@@ -8,7 +8,7 @@ public class State : MonoBehaviour
     
     [HideInInspector]
     public int hp;
-    public string EnemyBulletTag;
+    public string TargetBulletTag;
     private Animator anim;
     private SceneManager sceneManager;
 
@@ -22,7 +22,7 @@ public class State : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag(EnemyBulletTag)){
+        if(other.gameObject.CompareTag(TargetBulletTag)){
             hp -= 1;
         }
         if(hp<=0){
@@ -31,7 +31,12 @@ public class State : MonoBehaviour
             }
             else{
                 sceneManager.addScore(100);
+                if (gameObject.CompareTag("Boss"))
+                {
+                    Debug.Log(UnityEngine.SceneManagement.SceneManager.sceneCount);
+                }
             }
+
             anim.SetTrigger("die");
             Destroy(this.gameObject, 0.4f);
         }
@@ -42,4 +47,3 @@ public class State : MonoBehaviour
         Destroy(this.gameObject);
     }
 }
-// 테스트테스트 깃헙 테스트

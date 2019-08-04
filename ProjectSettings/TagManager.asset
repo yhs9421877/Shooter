@@ -8,6 +8,7 @@ TagManager:
   - PlayerBullet
   - Bullet
   - Mob
+  - Boss
   layers:
   - Default
   - TransparentFX

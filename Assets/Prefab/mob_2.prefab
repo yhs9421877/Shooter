@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 10
   hp: 30
-  EnemyBulletTag: Bullet
+  TargetBulletTag: Bullet
 --- !u!114 &1748873566364439813
 MonoBehaviour:
   m_ObjectHideFlags: 0

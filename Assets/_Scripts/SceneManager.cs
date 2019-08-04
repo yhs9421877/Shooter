@@ -17,6 +17,8 @@ public class SceneManager : MonoBehaviour
     public Button restartButton;
     public Button exitButton;
 
+    public GameObject[] DontDestroyObjects;
+
     private bool canAddScore = true;
 
     public float intervalTime = 3f;
@@ -42,6 +44,11 @@ public class SceneManager : MonoBehaviour
         //Invoke("SummonMob_4", 11f);
 
         //Invoke("SummonBoss", 18.0f);
+        foreach(GameObject obj in DontDestroyObjects)
+        {
+            DontDestroyOnLoad(obj);
+        }
+        DontDestroyOnLoad(this);
     }
 
     void Update()
@@ -118,7 +125,7 @@ public class SceneManager : MonoBehaviour
     void SummonMob_4(){
         Vector2[] pos = new Vector2[2]{new Vector2(-4,5.5f), new Vector2(4,5.5f)};
         for(int i=0; i<2; i++){
-            GameObject obj = (GameObject)Instantiate(mob_3,pos[i],Quaternion.identity);
+            GameObject obj = Instantiate(mob_3,pos[i],Quaternion.identity);
             if(i==1){
                 obj.transform.localScale = new Vector3(-1,1,1);
             }

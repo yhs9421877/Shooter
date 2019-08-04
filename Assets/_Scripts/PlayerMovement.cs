@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Shooting(){
         foreach(Transform t in cannons){
-            GameObject obj = (GameObject)Instantiate(bullet,t.position,Quaternion.identity);
+            GameObject obj = Instantiate(bullet,t.position,Quaternion.identity);
             obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,5) * bulletSpeed);
         }
         yield return new WaitForSeconds(1f);
