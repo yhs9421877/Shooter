@@ -159,7 +159,6 @@ MonoBehaviour:
   exitButton: {fileID: 1933868762}
   DontDestroyObjects:
   - {fileID: 123733129}
-  intervalTime: 3
 --- !u!4 &18486426
 Transform:
   m_ObjectHideFlags: 0
@@ -659,7 +658,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392142135}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1332,7 +1331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1404770212
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2002,11 +2001,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0aec397ef1bff64c9e6d7d09c5dccaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mob_1: {fileID: 5574987021455926482, guid: 2153c8718e5431842b4ddce199b638e8, type: 3}
-  mob_2: {fileID: 1760968530329203076, guid: fedf87ec059f1724da74f4961b0e4fa1, type: 3}
-  mob_3: {fileID: 1000545603886279393, guid: 921e1e18b18dc044a983c7d8e918f585, type: 3}
+  mobs:
+  - {fileID: 5574987021455926482, guid: 2153c8718e5431842b4ddce199b638e8, type: 3}
+  - {fileID: 1760968530329203076, guid: fedf87ec059f1724da74f4961b0e4fa1, type: 3}
+  - {fileID: 1000545603886279393, guid: 921e1e18b18dc044a983c7d8e918f585, type: 3}
   boss: {fileID: 6304065654099564569, guid: 4285fabace0b98647bc0b9c0a244275d, type: 3}
   intervalTime: 3
+  isRaid: 0
 --- !u!4 &1887946519
 Transform:
   m_ObjectHideFlags: 0

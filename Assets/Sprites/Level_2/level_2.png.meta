@@ -4,22 +4,22 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -7409730035925219397
-    second: level_2_0
+    second: Mob
   - first:
       213: -2601284298883841957
-    second: level_2_1
+    second: Mob_Bullet
   - first:
       213: -1876444221094193088
-    second: level_2_2
+    second: MoonBullet
   - first:
       213: -5309481892622912640
     second: level_2_3
   - first:
       213: -1976778350351955830
-    second: level_2_4
+    second: MiddleBoss
   - first:
       213: 7373919065527266621
-    second: level_2_5
+    second: Boss
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -92,7 +92,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: level_2_0
+      name: Mob
       rect:
         serializedVersion: 2
         x: 114
@@ -100,20 +100,20 @@ TextureImporter:
         width: 36
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b27af01a1a1214146a41c719867b899c
+      spriteID: d802895e28dd79c4297c69840a8b69e7
       internalID: -7409730035925219397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_2_1
+      name: Mob_Bullet
       rect:
         serializedVersion: 2
         x: 162
@@ -121,20 +121,20 @@ TextureImporter:
         width: 12
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d66cddf07db7f2a48809f486363021ea
+      spriteID: ca98ca93213e1c94eb7a45977dd27f1d
       internalID: -2601284298883841957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_2_2
+      name: MoonBullet
       rect:
         serializedVersion: 2
         x: 456
@@ -142,13 +142,13 @@ TextureImporter:
         width: 90
         height: 66
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0f5fa7f14f92cf46a1082758d615b07
+      spriteID: 20acc2ea644de8f4fa4744b24ec9ba93
       internalID: -1876444221094193088
       vertices: []
       indices: 
@@ -163,20 +163,20 @@ TextureImporter:
         width: 12
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aeb4e6e96e1d51d449e5e1235998feab
+      spriteID: 88a3420712a5a364ab48be7aa22c816e
       internalID: -5309481892622912640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_2_4
+      name: MiddleBoss
       rect:
         serializedVersion: 2
         x: 30
@@ -184,20 +184,20 @@ TextureImporter:
         width: 120
         height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca982259e7bd241419bdf9a84dfd849e
+      spriteID: 56b10e3b4ab533d45b07787c41afb917
       internalID: -1976778350351955830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_2_5
+      name: Boss
       rect:
         serializedVersion: 2
         x: 126
@@ -205,13 +205,13 @@ TextureImporter:
         width: 312
         height: 348
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d80927fc694bffa43bf6fda8dee5a486
+      spriteID: e1b44423f3168734794a55d2d7d94a7c
       internalID: 7373919065527266621
       vertices: []
       indices: 
