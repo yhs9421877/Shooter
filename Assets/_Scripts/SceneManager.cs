@@ -21,12 +21,12 @@ public class SceneManager : MonoBehaviour
 
     private bool canAddScore = true;
 
-    private SpawnManager spawnManager;
+    private RandomInCounter spawnManager;
 
     void Awake(){
         if(Instance==null) {Instance=this;}
         else{Destroy(gameObject);}
-        spawnManager = FindObjectOfType<SpawnManager>();
+        spawnManager = FindObjectOfType<RandomInCounter>();
     }
 
     void Start(){
