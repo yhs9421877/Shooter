@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
             
             spriteRenderer.sprite = particle;
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.8f);
-            Destroy(this.gameObject,0.03f);   
+            Destroy(this.gameObject,0.1f);   
         }
     }
 
